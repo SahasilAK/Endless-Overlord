@@ -1,0 +1,18 @@
+These files are present in the original Google Playground ZIP but are not referenced by any original exported source text.
+They are omitted from the smaller Android build project (original ZIP remains your full art backup).
+
+assets/images/icon_boss_demon_monarch.png
+assets/images/enemy_swordsman.png
+assets/images/enemy_rogue.png
+assets/images/boss_shadow_reaper.png
+assets/images/enemy_archer.png
+assets/images/boss_vampire_queen.png
+assets/images/boss_lich_lord.png
+assets/images/invader_dragon_slayer.png
+assets/images/enemy_mage.png
+assets/images/invader_grand_inquisitor.png
+assets/images/enemy_paladin.png
+assets/images/invader_royal_archmage.png
+assets/images/boss_cursed_golem.png
+assets/images/boss_demon_monarch.png
+assets/images/enemy_berserker.png

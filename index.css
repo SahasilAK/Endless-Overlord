@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f8fafc;
+  background: #090a10;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+html, body, #root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #090a10;
+  overscroll-behavior: none;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+button { -webkit-user-select: none; user-select: none; }
+canvas { display: block; touch-action: none; }
+img { -webkit-user-drag: none; }

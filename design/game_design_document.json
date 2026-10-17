@@ -1,0 +1,134 @@
+{
+  "title": "Eternal Overlord",
+  "hook": "Survive endless waves of heroes",
+  "game_overview": "Command a powerful dungeon boss repelling relentless waves of invading heroes with auto-attacking weapons, evolving magic, and deep progression.",
+  "artstyle": "pixelated",
+  "genre": "action_adventure",
+  "winning_condition": "Survive endless waves of invading champions, accumulating maximum score, gold, and permanent mastery unlocks.",
+  "losing_condition": "The playable Final Boss reaches zero health points in the dungeon arena.",
+  "player_mode": "single_player",
+  "supported_orientations": [
+    "landscape",
+    "wide"
+  ],
+  "input_methods": [
+    "touch",
+    "mouse",
+    "keyboard"
+  ],
+  "score_options": {
+    "score_type": "points",
+    "score_order": "higher_is_better"
+  },
+  "low_end_device_support": true,
+  "mobile_playable": true,
+  "tv_playable": false,
+  "language": [
+    "en"
+  ],
+  "content_descriptors": [
+    "violence"
+  ],
+  "controls": [
+    {
+      "input": "W / A / S / D or Arrow Keys",
+      "action": "Move the Final Boss across the dungeon arena."
+    },
+    {
+      "input": "Spacebar",
+      "action": "Perform an evasive dash with invulnerability frames."
+    },
+    {
+      "input": "1 / 2 / 3 Keys or Ultimate Button",
+      "action": "Trigger charged signature boss ultimate abilities."
+    },
+    {
+      "input": "Mouse Left Click / Touch Tap",
+      "action": "Navigate menus, select skill cards, buy from merchant shop."
+    },
+    {
+      "input": "Escape / P Key",
+      "action": "Pause the game and open the stats codex."
+    },
+    {
+      "input": "Virtual Touch Joystick",
+      "action": "Smooth directional movement on mobile devices."
+    },
+    {
+      "input": "Virtual Dash Button",
+      "action": "Perform evasive dash on touchscreens."
+    }
+  ],
+  "sections": [
+    {
+      "title": "Design Pillars",
+      "content": "1. Reverse Boss Power Fantasy: The player embodies an imposing dungeon boss, turning the tables on classic RPG adventuring parties. 2. Auto-Combat Horde Flow: Movement, positioning, and active evasion take center stage while diverse weapons and spells cast automatically on cooldown. 3. Synergistic Infinite Scaling: Countless skill evolutions, magic schools, and equipment bonuses stack into screen-clearing spectacles against endlessly escalating hero armies. 4. Meaningful Roguelite Progression: Every run generates unique dungeon arenas and yields persistent gold and boss souls to unlock permanent mastery perks.",
+      "summary": "Core tenets driving reverse-boss fantasy gameplay."
+    },
+    {
+      "title": "Core Loop",
+      "content": "Step 1: Select a playable Final Boss (e.g. Lich Lord, Demon Monarch, Vampire Sovereign, Shadow Reaper). Step 2: Spawn in a procedurally generated dungeon arena with distinct biome hazards. Step 3: Battle invading waves of adventurers, knights, mages, and champions while maneuvering and auto-firing weapons. Step 4: Collect orbs, dropped weapons, gold, and boss relics. Step 5: Wave clear triggers skill selection (choose 1 of 3 or rare 2 of 4 cards) and optional inter-wave merchant shop. Step 6: Endless wave scaling with elite packs and multi-boss invasions every 5/10 waves. Step 7: Upon defeat, convert score and boss souls into permanent stat masteries and new character unlocks.",
+      "summary": "Continuous cycle of wave survival, looting, upgrading, and permanent meta-progression."
+    },
+    {
+      "title": "Core Mechanics",
+      "content": "1. Auto-Combat Engine: Equipped weapons and spells cycle automatically based on individual range, cooldowns, and targeting priorities (nearest, strongest, or clustered enemies). 2. Dodge Dash: A swift burst of movement granting 0.3s invulnerability to weave through dense projectile salvos. 3. Elemental Synergies: Combining elemental skills (e.g., Fire + Tornado = Infernal Cyclone, Ice + Lightning = Frozen Thunderstorm, Poison + Explosion = Toxic Detonation) unlocks evolved hybrid spells. 4. Dungeon Merchant & Equipment: In-run gold allows purchasing and enchanting weapons, relics, and armor between waves.",
+      "summary": "Auto-targeting combat, evasion dynamics, skill synergies, and inventory management."
+    },
+    {
+      "title": "Movement & Scrolling Alignment",
+      "content": "Scrolling Axis: Multi-Directional bounded arena. Asset Orientation Baseline: All character sprites use oblique 3/4 top-down perspective facing right by default, flipping horizontally when moving left. Player Controls: 8-way continuous WASD/touch movement with responsive acceleration and soft deceleration friction. Camera Behavior: Smooth lerped camera following the player with bounded edge-damping to keep the boss and oncoming enemy waves clearly framed within the active arena.",
+      "summary": "Multi-directional top-down arena movement and smooth camera clamping."
+    },
+    {
+      "title": "Visual Hierarchy & Layering",
+      "content": "Layer Separation: Floor tiles and ambient dungeon grounds use muted, dark-slate desaturated tones with zero collision. Playfield Layer: The player boss has an imposing silhouette with luminous aura effects. Adventurers and elite heroes feature high-contrast palettes, class-specific gear, and distinct colored outlines. Hazard & Telegraph Language: Enemy spells, arrow trails, and boss slam telegraphs use vibrant warning indicators (bright crimson for physical, cyan for ice, amber for fire) rendered with glowing transparency. HUD Layer: Adaptive semi-transparent top bar displaying health, experience, wave counter, and equipped ability loadout.",
+      "summary": "Readable combat plane separation with crisp pixel art assets."
+    },
+    {
+      "title": "Characters & Enemies",
+      "content": "Playable Bosses: 20 unique playable bosses including Lich Lord (necromancy & frost), Demon Sovereign (infernal fire & cleave), Vampire Queen (blood magic & bat swarms), Void Tyrant (gravity pulls & black holes), and Cursed Golem (earth slams & thorns). Adventurer Invaders: Over 30 enemy archetypes including Swordsmen, Archers, Paladins, Arcane Wizards, Berserkers, Rogue Assassins, and Clerics. Legendary Invader Bosses: Elite champions like Grand Inquisitor, Dragon Slayer, and Royal Archmage with multi-phase attack patterns, barrier shields, and enrage states.",
+      "summary": "Playable final bosses, modular adventurer archetypes, and legendary hero bosses."
+    },
+    {
+      "title": "Fairness Tools",
+      "content": "1. Red warning circles and dashed line cones appear 0.6s prior to heavy adventurer strikes. 2. Experience and loot magnet radius scales with wave count and perks. 3. Reroll and banish tokens available in the end-of-wave skill selection draft. 4. Health drop guarantees from elite champion kills to prevent attrition.",
+      "summary": "Clear telegraphs, damage indicators, and build flexibility."
+    },
+    {
+      "title": "Juice & Game Feel",
+      "content": "Anticipation Juice: Character sprites squash on dashes, weapon charge glows intensify before firing. State Change Juice: Boss sprite emits particle sparks and chromatic pulses when activating ultimate abilities or picking up rare relics. Impact Juice: Critical strikes trigger subtle 30ms hit-stops, directional blood/spark bursts, floating damage numerals color-coded by element, and tiered screen-shake impulses on heavy boss impacts.",
+      "summary": "Tactile audio-visual feedback on impacts, leveling, and boss ultimates."
+    },
+    {
+      "title": "Permanent Progression & Meta Systems",
+      "content": "Soul Altar: Spend boss souls gathered across runs on permanent attributes (Max HP, Damage Multiplier, Movement Speed, Skill Duration, Cooldown Haste, Starting Gold). Boss Mastery: Levelling specific bosses unlocks unique signature starting weapons and exclusive passive perks. Codex: Complete collection records for defeated adventurer classes, legendary bosses, acquired spells, and survival records.",
+      "summary": "Soul altar, boss masteries, weapon forge, and codex unlocks."
+    },
+    {
+      "title": "Procedural Dungeon Generation",
+      "content": "Dungeon Themes: Cursed Crypt, Infernal Fortress, Frozen Cathedral, Necropolis, and Void Sanctum. Each theme procedurally populates destructible urns, defensive pillars, lava vents, spike traps, and spawn summoning circles that dynamically activate as wave intensity grows.",
+      "summary": "Varied dungeon themes, dynamic arena obstacles, and environmental hazards."
+    },
+    {
+      "title": "Social Mechanics & Audience",
+      "content": "Targeted at fans of horde survival, reverse dungeon defense, and top-down action roguelites. Local high-score leaderboard tracking best wave, most bosses slain, and highest damage build.",
+      "summary": "Endless score chasers, roguelite fans, and achievement completionists."
+    },
+    {
+      "title": "Accessibility",
+      "content": "Includes high-contrast enemy projectile toggles, screen-shake intensity slider (0-100%), damage number density settings, auto-aim toggle, and full keyboard/touch support.",
+      "summary": "Visual clarity, sound controls, and customizable input options."
+    },
+    {
+      "title": "Structural Integrity",
+      "content": "Main Menu (Boss Select, Upgrades, Codex, High Scores) -> Procedural Dungeon Loading -> Real-Time Wave Combat -> End-of-Wave Skill Draft / Merchant Shop -> Next Wave Scaling Loop -> Game Over Summary (Soul payout & stats) -> Meta Progression Shop.",
+      "summary": "Clean state flow from main menu through gameplay to death recap."
+    },
+    {
+      "title": "Virtual Touch Controls Implementation",
+      "content": "On mobile devices, render a virtual floating analog joystick on the bottom-left and a responsive Dash button and Ultimate ability button on the bottom-right. Bind pointerdown, pointermove, pointerup, pointerleave, and pointercancel events with touch-none CSS to guarantee zero-latency input without blocking canvas clicks.",
+      "summary": "Mobile responsive touch joystick and dedicated action buttons."
+    }
+  ]
+}

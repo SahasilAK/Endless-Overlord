@@ -1,0 +1,65 @@
+name: Build Eternal Overlord APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+
+permissions:
+  contents: read
+
+jobs:
+  android-debug-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Use JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 36 build tools
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Install frontend dependencies
+        run: npm install
+
+      - name: Bundle offline game
+        run: npm run build
+
+      - name: Create Android native wrapper
+        run: npx cap add android
+
+      - name: Copy built game assets
+        run: npx cap sync android
+
+      - name: Apply landscape/fullscreen settings
+        run: node scripts/configure-android.mjs
+
+      - name: Build signed Android debug APK
+        run: |
+          chmod +x android/gradlew
+          cd android
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Downloadable APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EternalOverlord-Android-debug-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
