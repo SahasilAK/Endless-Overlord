@@ -1,2 +1,126 @@
-# Endless-Overlord
-Command a powerful dungeon boss repelling relentless waves of invading heroes with auto-attacking weapons, evolving magic, and deep progression.
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&size=36&pause=900&color=9B59B6&center=true&vCenter=true&width=700&lines=Eternal+Overlord;Descend+into+the+dungeon!;Face+the+darkness.+Claim+your+fate." alt="Eternal Overlord — descend into the dungeon!" />
+
+### ⚔️ Survive the dungeon. Become the Overlord. 👑
+
+**The dark fantasy action game is ready when you are. Choose your portal:**
+
+[🎮 Play on Google Playground](https://playground.google/g/usFBoH) · [🕹️ Play on itch.io](https://gravewalkerr.itch.io/eternal-overlord)
+
+</div>
+
+---
+
+An offline-first Android edition of **Eternal Overlord**, built with **React + Vite + Capacitor 8**.
+
+> **This ZIP is an Android-ready source project, not an already-compiled APK.**
+> Building an installable Android APK needs Android SDK/Gradle on a build computer,
+> or the included GitHub Actions workflow.
+
+## Quick start on Windows: build a real APK
+
+1. Install **Node.js 22+**: https://nodejs.org/
+2. Install **Android Studio** (2025.2.1 or newer recommended):
+   https://developer.android.com/studio
+3. In Android Studio's SDK Manager, install **Android SDK Platform 36**
+   and matching build tools. Android Studio provides the required JDK.
+4. Extract the whole ZIP into a local directory (avoid paths inside OneDrive).
+5. Double-click **`BUILD_APK_WINDOWS.bat`**. An internet connection is required
+   the first time to fetch dependencies and Android build components.
+6. If the build succeeds, install **`EternalOverlord-debug.apk`** on an Android
+   device. Android may ask you to allow installation from your file manager.
+
+Android 7.0/API 24 or later is the native minimum for Capacitor 8. A modern
+Android phone is recommended for the game's large animations.
+
+### No Android Studio? Use GitHub Actions
+
+This project includes `.github/workflows/build-android-apk.yml`.
+
+1. Create a new GitHub repository and upload **the contents of this ZIP**,
+   including the hidden `.github` folder (do not upload only the ZIP file).
+2. Go to **Actions → Build Eternal Overlord APK → Run workflow**.
+3. Once the workflow finishes, download the
+   **`EternalOverlord-Android-debug-APK`** artifact from that run.
+4. Unzip the artifact and install the resulting `app-debug.apk`.
+
+The first build may require downloading Android/Gradle packages. The workflow
+is included for convenience; it has not been executed in this environment.
+
+## Manual Android build
+
+```bash
+npm install
+npm run build
+npx cap add android          # once only
+npx cap sync android
+npm run android:configure
+cd android
+./gradlew assembleDebug      # Windows: gradlew.bat assembleDebug
+```
+
+APK output: `android/app/build/outputs/apk/debug/app-debug.apk`
+
+After changing source files, run `npm run build`, `npx cap sync android`,
+then `npm run android:configure` again before rebuilding.
+
+To open the native project in Android Studio: `npx cap open android`.
+
+## Desktop web preview
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173. Mouse/keyboard controls from the original
+Playground project remain supported.
+
+## Android conversion changes
+
+- Keeps the original game's React logic, dungeon generation, animated sprites,
+  audio tracks, permanent progression, and save profile.
+- Bundles all **referenced** art and audio under `public/assets`, where Vite can
+  copy them into `dist/` and Capacitor can embed them in the Android app.
+- Replaces Google Playground's remote SDK with a **small offline adapter** so
+  no Google Playground internet connection is required during gameplay.
+  Playground-specific remote leaderboards, lobbies, or account integrations are
+  not included. The original game's local profile save stays in `localStorage`.
+- Preserves the LATEST on-screen joystick, ability buttons, dash, ultimate,
+  automatic touch detection and selectable control modes (Auto/Keyboard/Touch).
+  Adds native Android back button support and preserves the latest automatic
+  pause-on-background behavior. Touch controls show by default on Android.
+- Configures Android for **landscape, immersive fullscreen**, and screen
+  awake while playing. Hardware Back opens/closes the game menu.
+- Includes source and offline bundle build configuration, app icons, a
+  Windows single-command build script, Linux/macOS script, and CI workflow.
+- Reduces Android app size by omitting **15 source images not referenced** by
+  the game's code (~197 MiB uncompressed). The original uploaded ZIP is the
+  archive of all artwork; `docs/omitted-unused-assets.txt` lists omitted files.
+
+## Technical notes
+
+- App ID: `com.eternaloverlord.game`. Change this *before* initial native
+  generation to use your own domain/package name.
+- App name: Eternal Overlord.
+- Android is generated by `npx cap add android` the first time. It isn't
+  checked into this source archive.
+- An APK produced using `assembleDebug` is debug-signed and meant for local
+  testing / sideloading, **not Google Play Store publishing**. For production
+  distribution, create your own release signing key and generate a signed
+  release AAB/APK in Android Studio.
+- Local game saves and high scores are kept in the app's WebView storage and will ordinarily
+  be cleared if you uninstall the app or clear application data.
+- Native performance, UI layout, and physical-device compatibility have
+  **not been tested** from this environment because the Android SDK and
+  mobile device/emulator are unavailable here.
+
+
+## Latest project compatibility
+
+This archive incorporates the latest `eternal_overlord.zip` code, including the
+new AUTO/KEYBOARD/TOUCH selector, dynamic onscreen controls, and auto-pause.
+It is **not** an APK. The native Gradle project is generated as part of the
+first build. The included GitHub Actions workflow can build a debug-signed APK
+without installing Android Studio on your computer.
